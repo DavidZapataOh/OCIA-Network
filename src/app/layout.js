@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'OCIA Network',
-  description: 'On-Chain Intelligent Agents',
+  description: 'On-Chain Intelligent Agent',
 }
 
 export default function RootLayout({ children }) {
