@@ -68,7 +68,7 @@ export default function MainContent() {
                   type="text"
                   name="name"
                   id="name"
-                  className="w-full px-4 py-2 rounded-lg bg-[#2A2A2A] text-secondary placeholder-textSecondary focus:outline-none"
+                  className="w-full px-4 py-2 rounded-lg bg-background text-secondary placeholder-textSecondary focus:outline-none"
                   required
                 />
               </div>
@@ -80,7 +80,7 @@ export default function MainContent() {
                   type="text"
                   name="task"
                   id="task"
-                  className="w-full px-4 py-2 rounded-lg bg-[#2A2A2A] text-secondary placeholder-textSecondary focus:outline-none"
+                  className="w-full px-4 py-2 rounded-lg bg-background text-secondary placeholder-textSecondary focus:outline-none"
                   required
                 />
               </div>
