@@ -29,8 +29,9 @@ module.exports = {
         sans: ["Inter", "sans-serif"],
       },
       boxShadow: {
-        subtle: '0 1px 3px rgba(0, 0, 0, 0.1)', // Sombra ligera
-        strong: '0 4px 6px rgba(0, 0, 0, 0.3)', // Sombra fuerte
+        subtle: '0 1px 3px rgba(0, 0, 0, 0.1)', 
+        strong: '0 4px 6px rgba(0, 0, 0, 0.3)', 
+        inner: 'inset 2px 0 8px rgba(0, 0, 0, 0.6)', 
       },
       borderWidth: {
         1: '1px',

@@ -7,7 +7,6 @@ export default function FounderSection() {
       >
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center">
   
-          {/* Imagen del Fundador */}
           <div className="md:w-1/3 mb-8 md:mb-0">
             <div className="w-64 h-64 rounded-full overflow-hidden shadow-lg mx-auto">
               <img
@@ -17,8 +16,7 @@ export default function FounderSection() {
               />
             </div>
           </div>
-  
-          {/* Texto del Fundador */}
+
           <div className="md:w-2/3 text-center md:text-left">
             <h2 className="text-3xl font-bold mb-4">
               Meet the Founder
@@ -36,7 +34,6 @@ export default function FounderSection() {
               businesses to achieve more with less complexity."
             </p>
   
-            {/* Iconos de Redes Sociales */}
             <div className="flex space-x-4 justify-center md:justify-start">
               <a
                 href="https://www.linkedin.com/in/davidzapatao/"

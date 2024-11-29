@@ -2,7 +2,7 @@
 
 import Sidebar from "@/components/dashboard/Sidebar";
 import Header from "@/components/dashboard/Header";
-import MainContent from "@/components/dashboard/MainContent";
+import MainContent from "@/components/automation/MainContent";
 
 export default function Dashboard() {
   return (
