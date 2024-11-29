@@ -1,17 +1,13 @@
 'use client';
 
-import Image from 'next/image'
-import { motion } from "framer-motion";
-import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import Header from '../components/Header';
-import HeroSection from '../components/HeroSection';
-import AboutSection from '../components/AboutSection';
-import FeaturesSection from '../components/FeaturesSection';
-import FounderSection from '../components/FounderSection';
-import FAQ from '../components/FAQ';
-import Footer from '../components/Footer';
+import Header from '../components/landing/Header';
+import HeroSection from '../components/landing/HeroSection';
+import AboutSection from '../components/landing/AboutSection';
+import FeaturesSection from '../components/landing/FeaturesSection';
+import FounderSection from '../components/landing/FounderSection';
+import FAQ from '../components/landing/FAQ';
+import Footer from '../components/landing/Footer';
 
 export default function Home() {
   return (
