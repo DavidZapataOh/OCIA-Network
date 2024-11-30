@@ -17,7 +17,7 @@ export default function MainContent() {
     async function fetchAgents() {
       setLoading(true);
       try {
-        // TESTING
+        // Fetch sample agents
         const response = await fetch('/api/agents');
         const data = await response.json();
         setAgentsData(data);
@@ -33,26 +33,42 @@ export default function MainContent() {
   return (
     <main className="ml-64 p-8 flex-1 bg-background text-secondary overflow-y-auto">
       <section className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
-        <div className="p-6 bg-elementBackground rounded-lg shadow-md flex flex-col">
-          <h3 className="text-lg font-bold text-primary mb-2">Active Agents</h3>
-          <p className="text-4xl font-bold">{loading ? "..." : agentsData.length}</p>
-          <p className="text-textSecondary mt-2">Agents currently running tasks.</p>
-        </div>
-        <div className="p-6 bg-elementBackground rounded-lg shadow-md flex flex-col">
-          <h3 className="text-lg font-bold text-primary mb-2">Transactions Processed</h3>
-          <p className="text-4xl font-bold">1,254</p>
-          <p className="text-textSecondary mt-2">Total transactions completed successfully.</p>
-        </div>
-        <div className="p-6 bg-elementBackground rounded-lg shadow-md flex flex-col">
-          <h3 className="text-lg font-bold text-primary mb-2">Success Rate</h3>
-          <p className="text-4xl font-bold">92%</p>
-          <p className="text-textSecondary mt-2">Overall success rate of all tasks.</p>
-        </div>
+        {[
+          {
+            title: "Active Agents",
+            value: loading ? "..." : agentsData.length,
+            description: "Agents currently running tasks.",
+            color: "text-primary",
+          },
+          {
+            title: "Transactions Processed",
+            value: "1,254",
+            description: "Total transactions completed successfully.",
+            color: "text-success",
+          },
+          {
+            title: "Success Rate",
+            value: "92%",
+            description: "Overall success rate of all tasks.",
+            color: "text-accent",
+          },
+        ].map((metric, idx) => (
+          <div
+            key={idx}
+            className="p-6 bg-elementBackground rounded-lg shadow-lg flex flex-col"
+          >
+            <h3 className={`text-lg font-bold ${metric.color} mb-2`}>
+              {metric.title}
+            </h3>
+            <p className="text-4xl font-bold">{metric.value}</p>
+            <p className="text-textSecondary mt-2">{metric.description}</p>
+          </div>
+        ))}
       </section>
 
       <section className="mb-12">
         <h2 className="text-2xl font-bold mb-4">Performance Insights</h2>
-        <div className="p-6 bg-elementBackground rounded-lg shadow-md">
+        <div className="p-6 bg-elementBackground rounded-lg shadow-lg">
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={performanceData}>
               <CartesianGrid strokeDasharray="3 3" stroke="#444" />
@@ -75,13 +91,17 @@ export default function MainContent() {
             {agentsData.map((agent, idx) => (
               <div
                 key={idx}
-                className="p-6 bg-elementBackground rounded-lg shadow-md flex flex-col justify-between"
+                className="p-6 bg-elementBackground rounded-lg shadow-lg flex flex-col justify-between"
               >
                 <h3 className="text-lg font-bold text-primary mb-2">{agent.name}</h3>
                 <p className="text-sm text-textSecondary mb-4">{agent.description}</p>
                 <p className="text-sm">
                   <strong>Status:</strong>{" "}
-                  <span className={`${agent.status === "active" ? "text-success" : "text-error"}`}>
+                  <span
+                    className={`${
+                      agent.status === "active" ? "text-success" : "text-error"
+                    }`}
+                  >
                     {agent.status}
                   </span>
                 </p>
@@ -93,8 +113,10 @@ export default function MainContent() {
 
       <section>
         <h2 className="text-2xl font-bold mb-4">Recent Activity</h2>
-        <div className="p-6 bg-elementBackground rounded-lg shadow-md">
-          <p className="text-textSecondary">Logs and tasks will appear here in real-time.</p>
+        <div className="p-6 bg-elementBackground rounded-lg shadow-lg">
+          <p className="text-textSecondary">
+            Logs and tasks will appear here in real-time.
+          </p>
         </div>
       </section>
     </main>
