@@ -12,7 +12,7 @@ export default function ExecuteTransaction({ recipient, amount }) {
       };
       const transactionResponse = await signer.sendTransaction(tx);
       console.log("Transaction sent:", transactionResponse.hash);
-      await transactionResponse.wait(); // Esperar confirmación
+      await transactionResponse.wait();
       console.log("Transaction confirmed");
     } catch (error) {
       console.error("Error sending transaction:", error);

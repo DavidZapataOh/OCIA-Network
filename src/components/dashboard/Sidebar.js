@@ -1,6 +1,6 @@
 'use client';
 import { useRouter, usePathname } from "next/navigation";
-import { HomeIcon, ChartBarIcon, CogIcon, ClockIcon, LinkIcon } from "@heroicons/react/24/outline";
+import { HomeIcon, ChartBarIcon, CogIcon, ClockIcon, ChatBubbleLeftRightIcon, UserGroupIcon  } from "@heroicons/react/24/outline";
 import { FaTwitter, FaDiscord, FaGithub } from "react-icons/fa";
 
 export default function Sidebar() {
@@ -10,7 +10,8 @@ export default function Sidebar() {
         { name: "Dashboard", icon: <HomeIcon className="w-6 h-6" />, path: "/dashboard" },
         { name: "Automation", icon: <ChartBarIcon className="w-6 h-6" />, path: "/automation" },
         { name: "History", icon: <ClockIcon className="w-6 h-6" />, path: "/history" },
-        { name: "Protocols", icon: <LinkIcon className="w-6 h-6" />, path: "/protocols" },
+        { name: "Agents", icon: <ChatBubbleLeftRightIcon className="w-6 h-6" />, path: "/agents" },
+        { name: "Group Chat", icon: <UserGroupIcon className="w-6 h-6" />, path: "/group-chat" },
         { name: "Settings", icon: <CogIcon className="w-6 h-6" />, path: "/settings" },
       ];
     
